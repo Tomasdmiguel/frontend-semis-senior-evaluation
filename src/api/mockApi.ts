@@ -80,6 +80,7 @@ export const incidentApi = {
     );
     return respond({ data, total: data.length });
   },
+
   async get(id: string): Promise<Incident> {
     const incident = incidents.find((item) => item.id === id);
     if (!incident)
@@ -89,6 +90,7 @@ export const incidentApi = {
       });
     return respond(incident);
   },
+
   async crews(): Promise<Crew[]> {
     return respond(seedCrews);
   },
